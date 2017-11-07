@@ -1,0 +1,16 @@
+@font-face {
+	font-family: 'os-sb';
+	src: url('fonts/os-sb/os-sb.eot');
+	src: url('fonts/os-sb/os-sb.eot?#iefix')format('embedded-opentype'),
+	url('fonts/os-sb/os-sb.woff') format('woff'), url('fonts/os-sb/os-sb.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'os';
+	src: url('fonts/os/os.eot');
+	src: url('fonts/os/os.eot?#iefix')format('embedded-opentype'),
+	url('fonts/os/os.woff') format('woff'), url('fonts/os/os.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

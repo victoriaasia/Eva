@@ -1,0 +1,10 @@
+@mixin bp-table
+  @media screen and (max-width: 960px)
+    @content
+
+@mixin bp-mob
+  @media screen and (max-width: 480px)
+    @content
+
+@mixin transition($args...)
+  transition: $args
