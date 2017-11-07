@@ -16,14 +16,12 @@ var path = {
   dest: {
     all:'dest/',
     html: 'dest/',
-    js: 'dest/js/',
     css: 'dest/css/',
     img: 'dest/img/',
     fonts: 'dest/fonts/'
   },
   src: {
     html: 'source/*.{pug,html}',
-    js: 'source/js/*.js',
     css: 'source/css/*.sass',
     img: 'source/img/*.*',
     fonts: 'source/css/fonts/**/*.*'
@@ -68,25 +66,15 @@ gulp.task('img', function(done) {
     done();
 });
 
-gulp.task('js', function() {
-  gulp.src(path.src.js)
-    .pipe(rigger())
-    .pipe(concat('script.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest(path.dest.js))
-    .pipe(browserSync.reload({stream:true}))
-});
-
 gulp.task('build',
   gulp.series('clean',
-    gulp.parallel('html', 'css', 'js', 'img')
+    gulp.parallel('html', 'css', 'img')
   )
 );
 gulp.task('watch', function() {
   gulp.watch('./source/css/*.*', gulp.series('css'))
   gulp.watch('./source/*.html', gulp.series('html'))
   gulp.watch('./src/img/*.*', gulp.series('img'))
-  gulp.watch('./source/js/*.js', gulp.series('js'))
 });
 gulp.task('serve', () => {
   browserSync.init({
